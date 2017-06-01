@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+#homepoints-main-container { margin-top: 50px }
+
+.pseudo-panel-header { margin: 0; padding: 10px 15px; font-size: 18px }
+
+li.instructions + li.instructions { margin-top: 5px }
+a { color: #FF0000 }
+
+.nav-pills a { color: black  }
+.nav-pills { margin-bottom: 5px }
+.results { margin-top: 20px; }
+
+.results-error { color: red; }
+.results-success { color: green; }
+
+form input { margin-bottom: 5px; }
+p.help-block { margin-top: 5px; margin-bottom: 5px;}
+
+div.input-error { margin-bottom: 5px; color: red;}
+
+.file-input { margin-top: 15px;}
+.btn { margin-top: 15px;}

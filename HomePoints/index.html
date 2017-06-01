@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>HomePoints</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/vendor/angular-route.min.js"></script>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/singleController.js"></script>
+        <script src="js/multipleController.js"></script>
+        <script src="js/convertController.js"></script>
+        <script src="js/customOnChangeDirective.js"></script>
+    </head>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>HomePoints</h1>
+        <p>HomePoints is a utility used to filter GPS data. It started as a console application written in Python, but recently I recreated it as a web application built with angular.js. You can define any number of circles, and any GPS data that falls outside of those circles will be deleted. <a href="https://github.com/DrewKestell/HomePoints">Read More on Github.</a></p>
+      </div>
+    </div>
+
+    <body ng-app="homepointsApp">
+
+    <div id="homepoints-main-container" class="container">
+        <ul class="nav nav-pills">
+          <li role="presentation" data-toggle="tab" class="active"><a href="#single">Single</a></li>
+          <li role="presentation" data-toggle="tab"><a href="#multiple">Multiple</a></li>
+          <li role="presentation" data-toggle="tab"><a href="#convert">Convert</a></li>
+        </ul>
+        <div class="row">
+
+            <div ng-view class="form-group"></div>
+
+            <div class="col-md-6">
+                <h3 class="pseudo-panel-header">Instructions</h3>
+                <ul>
+                    <li class="instructions">First, click either the Single or Multiple tab depending on whether you're working with one initial radius or multiple.</li>
+                    <li class="instructions">If you have one initial location, enter the latitude/longitude and radius in the input fields to the left. If you have multiple initial locations, list them in a .csv file and upload that file to the left. Click <a href="https://github.com/DrewKestell/HomePoints/blob/master/homepoints.csv" target="_blank">here</a> to see an example of how your file should be formatted.</li>
+                    <li class="instructions">Upload your raw GPS data in a .csv file. Click <a href="https://github.com/DrewKestell/HomePoints/blob/master/rawdata.csv" target="_blank">here</a> to see an example of how your file should be formatted.</li>
+                    <li class="instructions">Click Submit. Processing your data may take some time depending on the amount of GPS data being cleansed. Once processing is complete, a new .csv file will start downloading in your browser.</li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+      <footer>
+        <p>&copy; Bloog Inc. 2015</p>
+      </footer>
+    </div>
+
+    <script src="js/vendor/jquery-1.11.2.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    </body>
+</html>

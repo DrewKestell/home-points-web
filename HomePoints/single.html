@@ -1,0 +1,47 @@
+<div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Process Single Radius</h3>
+      </div>
+      <div class="panel-body">
+
+        <form name="singleForm" id="singleForm" novalidate ng-submit="singleForm.$valid && submit()">
+
+            <label for="initialLatitude">Initial Location</label>
+
+            <input type="text" class="form-control input-sm" id="initialLatitude" name="initialLatitude" ng-model="initialLatitude" placeholder="Latitude (eg: 25.78831)" required>
+            <div class="input-error" ng-show="singleForm.$submitted || singleForm.initialLatitude.$touched">
+              <div ng-show="singleForm.initialLatitude.$error.required">Initial latitude is required</div>
+            </div>
+
+            <input type="text" class="form-control input-sm" id="initialLongitude" name="initialLongitude" ng-model="initialLongitude" placeholder="Longitude (eg: -80.3377)" required>
+            <div class="input-error" ng-show="singleForm.$submitted || singleForm.initialLongitude.$touched">
+              <div ng-show="singleForm.initialLongitude.$error.required">Initial longitude is required</div>
+            </div>
+
+            <input type="text" class="form-control input-sm" id="initialRadius" name="initialRadius" ng-model="initialRadius" placeholder="Radius in Miles (eg: 2.5)" required>
+            <div class="input-error" ng-show="singleForm.$submitted || singleForm.initialRadius.$touched">
+              <div ng-show="singleForm.initialRadius.$error.required">Initial radius is required</div>
+            </div>
+
+            <label class="file-input" for="rawData">Raw GPS Data</label>
+            <input type="file" id="rawData" name="rawData" ng-model="rawData" valid-file="uploadRawData" required>
+            <p class="help-block">Upload your raw GPS data here.</p>
+            <div class="input-error" ng-show="singleForm.$submitted">
+              <div ng-show="singleForm.rawData.$error.required">Please provide a .csv file containing your GPS data</div>
+            </div>
+
+        
+        <input type="submit" class="btn btn-default" value="Submit">
+        <input type="button" ng-click="clear()" class="btn btn-default" value="Clear">
+
+        </form>
+
+        <div id="results" class="results">
+            <p id="results1" ng-class="results1class" ng-bind="results1"></p>
+            <p id="results2" ng-class="results2class" ng-bind="results2"></p>
+            <p id="results3" ng-class="results3class" ng-bind="results3"></p>
+        </div>
+      </div>
+    </div>
+</div>
